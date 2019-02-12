@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Astro World</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    
+        <style>
+            body{margin: 0px; background-image:url(back2.jpg); background-size: cover; background-attachment: fixed;}
+            
+            
+            
+            /*====STYLE FOR MENU BAR====*/
+            .menu{
+                background-color:;
+                float: left;
+                text-align: center;
+                display: block;
+                text-transform: capitalize;
+                animation: fade 4s 1;
+                z-index: 999;
+                
+            }
+            
+            @keyframes fade{
+                0%{opacity: 0;}
+                100%{opacity: 1;}
+            }
+            
+            .menu a{
+                font-family: sans-serif;
+                color: white;
+                font-size: 15px;
+                text-decoration: none;
+                transition: .7s;
+                display: block;
+                animation: zoom 1s 1; 
+                
+            }
+            
+             @keyframes zoom{
+                0%{margin-top:-13px;}
+                100%{margin-top:0px;}
+            }
+            
+            .menu a:hover{
+                color: black;
+                background-color: #2196f3;
+                
+            }
+            
+            .menu ul{
+                list-style: none;
+                transition: .5s;
+                margin-top: 0px;
+                margin-left: -40px;
+                 
+            }
+            
+            .menu ul li{
+                float: left;
+                width:216px;
+                height: 45px;
+                line-height: 40px;
+                background-color: ;
+            }
+            
+            
+            .menu ul ul li{
+                position: relative;
+                display: none;
+                background-color: #64b5f671;
+               margin-left:0px;
+                z-index: 5;
+                
+            }
+            
+            .menu ul ul ul{
+                position: relative;
+                display: none;
+                float: left;
+                margin-top: -40px;
+               
+            }
+            
+            .menu ul li:hover ul li{
+                display: block;
+                animation: abc .5s 1;
+            }
+            
+            @keyframes abc{
+                0%{opacity: 0; top: -5px;}
+                100%{opacity: 1; top:0px;}
+            }
+            
+            
+            .menu ul ul li:hover ul{
+                display: block;
+                width: 140px;
+                margin-left:100px;
+            }
+            
+            .menu ul ul ul li{
+               margin-left:76px;
+            }
+            
+            /*====STYLE TOP BAR====*/
+            .topbar{
+                width:100%;
+                height: 60px;
+                background-color:;
+            }
+            
+            .topimg{
+                float: left;
+                background-image: url(space.png);
+                
+            }
+            
+            /*====STYLE TOP ZODIC WHEEL====*/
+            .zodic{
+                background-color:;
+                margin-top: 30px;
+            }
+            
+            
+            .cont1{
+                background-color:;
+            }
+            
+            .cont2{
+                background-color:; 
+                animation: rotate 20s linear infinite;
+                border-radius: 50%;
+                margin-left:45px;
+                padding-left: -1px;
+                
+            }
+            
+            
+            
+             @keyframes rotate{
+                0%{transform: rotate(-360deg); filter: hue-rotate(360deg)};
+                100%{transform: rotate(-360deg);filter: hue-rotate(360deg)};
+            }
+           
+            .cont3{
+                background-color:;  
+            }
+             /*====STYLE JUNE IMAGES====*/
+            .city{
+                width: 1140px;
+                height: 400px;
+                float: left;
+                margin-top: 20px;
+                background-image: url(june.jpg);
+                overflow: hidden;
+                transition: .5s ease-in;
+                border-radius: 10px;
+            }
+            
+            .city:hover{
+                filter:hue-rotate(250deg);
+            }
+            
+            .city_1{
+              background:linear-gradient(to top, #000000e2 85%, #00000000);
+                width: 1140px;
+                height:400px;
+                opacity: 1;
+                margin-top: 400px;
+                transition: .8s;
+            }
+            
+            .city:hover .city_1{
+                opacity: 1;
+                margin-top:310px;
+            }
+            
+            .text{
+                font-family: futura bk bt;
+                color: white;
+                font-size: 45px;
+                padding-left: 50px;
+               
+            }
+            
+            /*====JUNE IMAGES STYLE====*/
+            
+            .june1{
+                transition: .2s ease;
+                background-image: url(june2.jpg);
+                width: 550px;
+                height: 560px;
+                border-radius: 10px;
+                
+            }
+            
+            .june1:hover{
+                box-shadow: #262626 10px 10px 12px;
+                transform: translateY(-5px);
+                
+            }
+            
+            .june1_cover{
+                width: 550px;
+                height: 560px;
+                transition: .5s ease;
+                
+               
+            }
+            
+            .june1_cover:hover{
+                background-color: #000000bb;
+                border-top: 3px white solid;
+                border-bottom: 3px white solid;
+                border-right: 3px white solid;
+                border-left: 3px white solid;
+                border-radius: 10px;
+                transform: scale(.95);
+                
+                
+            }
+            
+            .june1_cover:hover .june1_cover_text{
+                opacity: 1;
+                font-size: 60px;
+                
+                
+            }
+            
+            .june1_cover_text{
+                font-family: quicksand;
+                color: white;
+                text-align: center;
+                font-size: 50px;
+                padding-top: 200px;
+                opacity: 0;
+                transition: .5s;
+            }
+            
+            .june2{
+                transition: .2s ease;
+                background-image: url(june1.jpg);
+                width: 556px;
+                height: 270px;
+                border-radius: 10px;
+                overflow: hidden;
+                
+            }
+            
+            .june2:hover{
+                box-shadow: #262626 10px 10px 12px;
+                transform: translateY(-5px);
+                background-color: #000000;
+                
+            }
+            
+            .june2_cover{
+                width: 556px;
+                height: 270px;
+                border-radius: 10px;
+                background-color: #000000bb;
+                margin-left:550px;
+                border-left: white solid 8px;
+                transition: .5s;
+                
+            }
+            
+            .june2:hover .june2_cover{
+                margin-left: 0px;
+            }
+            
+            .june2:hover .june2_cover_text{
+                opacity: 1;
+                font-size: 50px;
+                padding-top: 60px;
+            }
+            
+            .june2_cover_text{
+                font-family: quicksand;
+                color: white;
+                text-align: center;
+                font-size: 50px;
+                padding-top: 0px;
+                opacity: 0;
+                transition: 1.7s;
+            }
+            
+            .june2_cover_text:hover{
+                transform: rotateY(30deg) perspective(150px);
+            }
+            
+            /*---------------------------*/
+            .june3{
+                transition: .2s ease;
+                background-image: url(june3.jpg);
+                width: 556px;
+                height: 270px;
+                border-radius: 10px;
+                overflow: hidden;
+                
+            }
+            
+            .june3:hover{
+                box-shadow: #262626 10px 10px 12px;
+                transform: translateY(-5px);
+                background-color: #000000;
+                
+            }
+            
+            .june3_cover{
+                width: 556px;
+                height: 270px;
+                border-radius: 10px;
+                background-color: #000000bb;
+                margin-left:550px;
+                border-left: white solid 8px;
+                transition: .5s;
+                
+            }
+            
+            .june3:hover .june3_cover{
+                margin-left: 0px;
+            }
+            
+            .june3:hover .june3_cover_text{
+                opacity: 1;
+                font-size: 50px;
+                padding-top: 60px;
+            }
+            
+            .june3_cover_text{
+                font-family: quicksand;
+                color: white;
+                text-align: center;
+                font-size: 50px;
+                padding-top: 0px;
+                opacity: 0;
+                transition: 1.7s;
+            }
+            
+            .june3_cover_text:hover{
+                transform: rotateY(30deg) perspective(50px);
+            }
+            
+               /*====STYLE BOX TEXT (SHARE YOUR PROBLEM)====*/
+            .box{
+                width: 360px;
+                height: 400px;
+                background-color: white;
+                float: ;
+                border-top: 10px solid purple;
+                border-right: 3px grey solid;
+                border-bottom: 3px grey solid;
+                border-left: 3px grey solid;
+                padding: 10px 5px 10px 15px;
+                transition: .3s;
+            }
+            
+            .box:hover{
+                width: 360px;
+                height: 400px;
+                background-color: white;
+                float: ;
+                border-top: 3px #ff0063 solid;
+                border-right: 3px red solid;
+                border-bottom: 3px red solid;
+                border-left: 3px red solid;
+                padding: 10px 5px 10px 15px;
+                border-radius: 5px;
+                box-shadow: #262626 0px 15px 12px;
+                
+            }
+            
+            .box_head{
+                font-family: sans-serif;
+                font-size: 22px;
+                color: purple;
+                transition: .3s;
+            }
+            
+            .box:hover .box_head{
+                font-family: sans-serif;
+                font-size: 22px;
+                color: #ff0063;
+               
+            }
+            
+            .box_text{
+                font-family: sans-serif;
+                font-size: 15px;
+                color: darkslategrey;
+             
+            }
+            
+            /*====EMAIL AND COPYRIGHT TEXT BACK====*/
+            .back{
+                width: 100%;
+                height: 150px;
+                background-color: #f3daffbe;
+                text-align: center;
+                color: purple;
+            }
+            
+            
+            .back1{
+                width: 100%;
+                height: 150px;
+                background-color: #f30079;
+                
+            }
+            
+            
+            .back1_text{
+                font-family: quicksand;
+                color: white;
+                font-size: 22px;
+            }
+            
+            .copy_back{
+                width: 100%;
+                height: 40px;
+                background-color: #3c3c3c;
+                color: white;
+                text-align: center;
+                padding-top: 10px;
+            }
+            
+            /*====TAROT BACK====*/
+            .tarot_back{
+                background-size:auto;
+                background-repeat: no-repeat;
+                background-image: url(Card%20background.jpg);
+                padding-top: 25px;
+                padding-bottom: 40px;
+                text-align: center;
+                  
+            }
+            .card{
+                transition: .2s ease-out;
+                filter: grayscale(100%);
+            }
+            
+            .card:hover{
+                transform: scale(1.03)translateY(-5%);
+                filter: brightness(200%) saturate(200%);
+                box-shadow: yellow 0px 0px 15px; 
+                
+            }
+            
+            .card_text{
+                font-family: agency fb;
+                font-size: 55px;
+                color: white;
+                text-align:left;
+                padding-left: 165px;
+                
+            }
+            
+            
+        </style>
+    </head>
+    
+    <body>
+        
+        
+        
+            
+        
+        <!--====TOP BAR====-->
+        <div class="topimg">
+        <div class="topbar">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-md-2">
+                <img src="LOGO.png" class="img-responsive" style="padding-top: 12px;">
+                </div>
+                
+                <div class="col-md-8"></div>
+                <div class="col-md-1"><div class="fa fa-2x fa-facebook"style="padding-top: 12px; padding-left: 70px; color: white;"></div></div>
+                <div class="col-md-1"><div class="fa fa-2x fa-twitter" style="padding-top: 12px; color: white;"></div></div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <!--====MENU BAR====-->
+        <div class="container">
+            
+        <div class="menu">
+        <ul>
+            <li><a href="#">ASTROLOGY</a>
+                <ul>
+                <li><a href="#">GROUNDING</a></li>
+                <li><a href="#">MANY MOONS</a></li>
+                <li><a href="#">GUIDANCE</a></li>
+                <li><a href="#">ALL ARTICLE<span class="fa fa-angle-double-right" style="padding-left: 20px;"></span></a>
+                   <ul>
+                       <li><a href="#">Java Script</a></li>
+                       <li><a href="#">PHP</a></li>
+                       <li><a href="#">Ruby</a></li>
+                    </ul>
+                  </li>
+                <li><a href="#">CALENDER</a>
+                </ul> 
+                </li>
+            
+            
+           <li><a href="">HOROSCOPES</a>
+                <ul>
+                    <li><a href="#">2018 HOROSCOPES</a></li>
+                    <li><a href="#">DAILY</a></li>
+                    <li><a href="#">YEARLY</a></li>
+                  </ul>
+                </li>
+            <li><a href="">TAROT</a>
+            <li><a href="">STORE</a>
+            <li><a href="">HELP</a>
+                </ul>
+                
+        </div>
+            </div><!--====END OF CONTAINER====-->
+            
+            <!--====ZODIC WHEEL====-->
+            <div class="container">
+            <div class="row">
+                
+                
+                <div class="col-md-12 zodic">
+                    <div class="col-md-3 cont1"></div>
+                <div class="col-md-5 cont2"><img src="zodiac-wheel.png" class="img-responsive"></div>
+                    <div class="col-md-2 cont3"></div>
+                </div>
+                </div>
+            </div>
+            </div><!--====END OF TOP IMAGE====-->
+        
+        
+        <!--====JUNE IMAGES====-->
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="city"><div class="city_1"><div class="text">Checkout your June horoscope</div></div></div>
+            </div>
+            </div>
+        </div>
+            
+            <br>
+            <div class="container">
+             <div class="row">
+            <div class="col-md-6">
+                <div class="june1"><div class="june1_cover"><div class="june1_cover_text">TODAY'S<br>HOROSCOPE</div></div></div>
+            </div>
+            
+            <div class="col-md-6">
+                  
+            <div class="june2"><div class="june2_cover"><div class="june2_cover_text">TOMORROW'S<br>HOROSCOPE</div></div></div>
+          <br>
+            <div class="june3"><div class="june3_cover"><div class="june3_cover_text">YOUR<br>HEALTH</div></div></div>
+            </div>
+        
+                </div>
+            </div>
+        
+        
+        <!--====SHARE YOUR PROBLEM====-->
+        <div class="container">
+            <div class="row">
+                <br>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="col-md-12">
+                <b class="box_head"><i class="fa fa-comments"></i> SHARE YOUR PROBLEM, GET SOLUTIONS</b>
+                </div>
+                
+                <div class="box_text">
+                   
+                    <div class="col-md-6">
+                    <br>
+            <p><i class="fa fa-heart-o"></i> LOVE</p>
+            <p><i class="fa fa-handshake-o"></i> RELATIONSHIP</p>
+            <p><i class="fa fa-suitcase"></i> CAREER</p>
+            <p><i class="fa fa-line-chart"></i> BUSINESS</p> 
+            <p><i class="fa fa-child"></i> FAMILY</p> 
+            <p><i class="fa fa-dollar"></i> FINANCE</p>
+                    </div>
+                    
+                    <div class="col-md-6"style="text-align: center;">
+                        <img src="Mohanlal.png" class="">
+                    <b>Mohan Green Topi Wala</b><br>
+                        Experiance<br>
+                        15 Years
+                    </div>
+                </div>
+                
+                <div class="col-md-12" style="text-align:center; padding-top: 40px;">
+                <button class="btn btn-success">TALK TO ASTROLOGER NOW</button>
+                </div>
+                
+            </div>
+            </div>
+                
+        <!--====DAILY HOROSCOPE====-->
+        <div class="col-md-4">
+            <div class="box">
+            <b class="box_head"><i class="fa fa-star"></i> DAILY HOROSCOPES</b>
+                <div class="box_text"><br><br>
+                <p>Daily horoscopes are prepared by astrologers taking into account the planetary configurations for the day. Most people, whether they admit it or not, are addicted to reading their daily horoscope first thing in the morning in the newspaper, or online. Daily horoscopes are generic in nature, people easily relate to them in some way or another, and as they mostly focus on the positive aspects, it brightens up their day and makes them happy, and they plan out their day accordingly.</p>
+                </div>
+                </div>
+            </div>
+            
+        <!--====TOP NEWS====-->        
+        <div class="col-md-4">
+            <div class="box">
+                <div class="col-md-12">
+             <b class="box_head"><i class="fa fa-newspaper-o"></i> TOP STORIES</b>
+                </div>
+                <br><br><br>
+                <div class="row">
+                <div class="col-md-3"><div class="row"><img src="News1.png" class="img-responsive"></div></div>
+                <div class="col-md-9"><b>Weekly Horoscope - Free Astrology Predictions This Week</b></div>
+                </div>
+                
+                <div class="row">
+                <div class="col-md-3"><div class="row"><img src="News2.png" class="img-responsive"></div></div>
+                <div class="col-md-9"><b>Your Cosmic Calendar For The Upcoming Week</b></div>
+                </div>
+                
+                <div class="row">
+                <div class="col-md-3"><div class="row"><img src="News3.png" class="img-responsive"></div></div>
+                <div class="col-md-9"><b>Shani Jayanti</b></div>
+                </div>
+                
+                <div class="col-md-12" style="text-align:center; padding-top: 5px;">
+                <button class="btn btn-danger">MORE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="btn btn-success">SUBSCRIBE</button>
+                </div>
+            
+            </div>
+            </div>
+         </div>
+        </div><!--====END OF CONTAINER====-->
+       
+        <!--====TAROT CARDS====-->
+        <br>
+        <div class="tarot_back">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8" style="margin-left: 340px;">
+            <div class="card_text" style="font-size:30px; margin-left:-110px;">Get a simple yes or no answer with actionable advice</div>
+            <div class="card_text">PICK A CARD</div>
+                    </div>
+            </div>
+            </div>
+            
+            <div class="container">
+                <div class="row" style="margin-top: 30px;">
+                   
+            <div class="col-md-3" style="margin-left: 300px;">
+                <img src="Taroit%20Card.png" class="img-responsive card">
+                
+                <img src="Taroit%20Card.png" class="img-responsive  card" style="margin-left: 50px;margin-top: -454px">
+                
+                <img src="Taroit%20Card.png" class="img-responsive  card" style="margin-left: 100px;margin-top: -454px">
+                
+                <img src="Taroit%20Card.png" class="img-responsive  card" style="margin-left: 150px;margin-top: -454px">
+                
+                <img src="Taroit%20Card.png" class="img-responsive  card" style="margin-left: 200px;margin-top: -454px">
+                
+                <img src="Taroit%20Card.png" class="img-responsive  card" style="margin-left: 250px;margin-top: -454px">
+                
+                <img src="Taroit%20Card.png" class="img-responsive  card" style="margin-left: 300px;margin-top: -454px">
+                
+                <img src="Taroit%20Card.png" class="img-responsive  card" style="margin-left: 350px;margin-top: -454px">
+            </div>
+                      
+            
+            
+            
+            </div>
+            </div><!--====END OF CONTAINER====-->
+        </div>
+        
+        <!--====SITE STAT====--> 
+        <br><br>
+        <div class="back">
+        <div class="container">
+        <div class="row" style="margin-top: 45px;">
+            <div class="col-md-2" >
+            <i class="fa fa-3x fa-mobile"></i> 80% Mobile Users
+            </div>
+            <div class="col-md-2">
+            <i class="fa fa-3x fa-umbrella"></i> Trusted Since 1995
+            </div>
+            <div class="col-md-2">
+            <i class="fa fa-3x fa-file-text"></i> 99.25 Million Page Views
+            </div>
+            <div class="col-md-2">
+            <i class="fa fa-3x fa-users"></i> 92 Lacs Active Users
+            </div>
+            <div class="col-md-2">
+            <i class="fa fa-3x fa-globe"></i> Users from 180 Countries
+            </div>
+            <div class="col-md-2">
+            <i class="fa fa-3x fa-smile-o"></i> 50Million+ Active Customers
+            </div>
+            </div>
+        </div>
+            </div>
+        
+        <!--====EMAIL SUBSCRIBE====-->
+        <div class="back1">
+        <div class="container">
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-md-9">
+                <div class="back1_text">
+Stay Updated With Your Daily, Weekly, Monthly & Yearly <span style="font-size: 38px;">Horoscopes</span> & Read Predictions By Our Expert Astrologers</div>
+
+            </div>
+            <div class="col-md-2">
+           <input type="email" placeholder="Input Email" class="form-control" style="margin-top: 30px;">
+                  </div>
+            <div class="col-md-1" style="margin-top: 30px; margin-left: -25px"> 
+                <button type="submit" class="btn btn-default">Submit</button></div>
+            </div>
+        </div><!--====END OF CONTAINER====-->
+            </div>
+    
+        <!--====COPYRIGHTS====-->
+        <div class="copy_back">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                
+                Copyright &copy; 2018 Astro Ventures Private Limited.
+                    </div>
+            </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
